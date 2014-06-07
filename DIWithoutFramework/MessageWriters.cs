@@ -28,9 +28,9 @@ namespace DIWithoutFramework
     {
         public void Write(string message)
         {
-            using (StreamWriter streamWriter = new StreamWriter("e:\\DemoLog.txt"))
+            using (StreamWriter streamWriter = new StreamWriter("d:\\DemoLog.txt"))
             {
-                streamWriter.WriteLine(message);
+                streamWriter.WriteLine(DateTime.Now.ToString() + message);
                 streamWriter.Close();
             }
         }

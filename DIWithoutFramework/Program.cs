@@ -10,9 +10,10 @@ namespace DIWithoutFramework
     {
         static void Main(string[] args)
         {
-            Salutation salutation = new Salutation(new TextFileMessageWriter());
+            Salutation salutation = new Salutation(new ConsoleMessageWriter());
             salutation.Exclaim();
 
+            Console.WriteLine("Execution done!!!");
             Console.ReadLine();
         }
     }
