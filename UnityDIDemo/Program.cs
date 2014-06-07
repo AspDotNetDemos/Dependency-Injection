@@ -1,4 +1,6 @@
 ﻿using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
+using System.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,20 +27,41 @@ namespace UnityDIDemo
 
             #region Example 2
 
-            IMessageWriter writer;
+            //IMessageWriter writer;
 
-            var container = new UnityContainer();
-            container.RegisterType<IMessageWriter, ConsoleMessageWriter>();
+            //var container = new UnityContainer();
+            //container.RegisterType<IMessageWriter, ConsoleMessageWriter>();
 
-            writer = container.Resolve<IMessageWriter>();
+            //writer = container.Resolve<IMessageWriter>();
 
-            writer.Write("Hi this is Unity Framework Demo!!!");
+            //writer.Write("Hi this is Unity Framework Demo!!!");
 
             #endregion
 
             #region Example 3
 
-            // To Do
+            //IMessageWriter writer;
+            //var container = new UnityContainer();
+
+            //container.RegisterType<IMessageWriter, ConsoleMessageWriter>("Console");
+            //container.RegisterType<IMessageWriter, TextFileMessageWriter>("Text");
+
+            //writer = container.Resolve<IMessageWriter>("Console");
+
+            //writer.Write("Hi this is Unity Framework Demo!!!");
+
+            #endregion
+
+            #region Example 4
+
+            IMessageWriter writer;
+            var container = new UnityContainer();
+
+            container.LoadConfiguration();
+
+            writer = container.Resolve<IMessageWriter>();
+
+            writer.Write("Hi this is Unity Framework Demo!!!");
 
             #endregion
 

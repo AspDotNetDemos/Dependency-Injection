@@ -30,7 +30,7 @@ namespace UnityDIDemo
         {
             using (StreamWriter streamWriter = new StreamWriter("e:\\DemoLog.txt"))
             {
-                streamWriter.WriteLine(message);
+                streamWriter.WriteLine(DateTime.Now.ToString() + message);
                 streamWriter.Close();
             }
         }
